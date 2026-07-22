@@ -3,163 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="个人作品集网站，展示个人简介、创作方向与精选作品。" />
-  <meta name="theme-color" content="#171813" />
-  <title>Personal Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <meta name="description" content="沉浸式虚拟展馆个人作品集，通过滚动探索连续的三维项目空间。" />
+  <meta name="theme-color" content="#11120f" />
+  <title>Virtual Gallery · Personal Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="light-on">
-  <div class="cursor-light" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
+<body class="is-loading">
+  <div class="loader" aria-live="polite">
+    <div class="loader-mark">P.</div>
+    <div class="loader-copy"><span>LOADING VIRTUAL GALLERY</span><div class="loader-line"><i></i></div></div>
+  </div>
 
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="返回首页">
-      <span class="brand-mark">P.</span>
-      <span class="brand-name">PERSONAL<br />PORTFOLIO</span>
-    </a>
+  <div class="gallery" id="gallery">
+    <header class="hud-header">
+      <a class="brand" href="#" data-jump="0" aria-label="返回展馆入口"><span class="brand-mark">P.</span><span class="brand-copy">VIRTUAL<br />GALLERY</span></a>
+      <div class="gallery-status" aria-live="polite"><span class="status-index">00</span><span class="status-line"></span><span class="status-name">ENTRANCE</span></div>
+      <button class="info-toggle" type="button" aria-expanded="false" aria-controls="about-panel"><span>INFO</span><i aria-hidden="true"></i></button>
+    </header>
 
-    <nav class="nav" aria-label="主导航">
-      <a class="nav-link active" href="#home" data-section="home"><span>01</span>首页</a>
-      <a class="nav-link" href="#about" data-section="about"><span>02</span>关于</a>
-      <a class="nav-link" href="#work" data-section="work"><span>03</span>作品</a>
+    <aside class="about-panel" id="about-panel" aria-hidden="true">
+      <button class="panel-close" type="button" aria-label="关闭个人介绍">CLOSE ×</button>
+      <p class="micro-label">ABOUT THE CREATOR</p>
+      <h2>在数字空间中，<br />构建<span>可被感知的叙事。</span></h2>
+      <p>我专注于视觉设计、数字体验与三维空间表达。这个虚拟展馆收录了三组概念项目，通过滚动完成一次连续的空间漫游。</p>
+      <a href="mailto:hello@example.com">HELLO@EXAMPLE.COM ↗</a>
+    </aside>
+
+    <nav class="gallery-nav" aria-label="展馆导航">
+      <button class="nav-stop active" type="button" data-progress="0" aria-label="前往入口展厅"><span>00</span><i></i><b>入口</b></button>
+      <button class="nav-stop" type="button" data-progress="0.24" aria-label="前往项目一展厅"><span>01</span><i></i><b>共生</b></button>
+      <button class="nav-stop" type="button" data-progress="0.51" aria-label="前往项目二展厅"><span>02</span><i></i><b>无界</b></button>
+      <button class="nav-stop" type="button" data-progress="0.78" aria-label="前往项目三展厅"><span>03</span><i></i><b>余温</b></button>
+      <button class="nav-stop" type="button" data-progress="1" aria-label="前往出口空间"><span>04</span><i></i><b>联系</b></button>
     </nav>
 
-    <button class="light-toggle" type="button" aria-pressed="true" aria-label="关闭互动灯光">
-      <span class="light-icon" aria-hidden="true"></span>
-      <span class="light-label">LIGHT ON</span>
-    </button>
-  </header>
+    <div class="scene" aria-hidden="true">
+      <div class="scene-vignette"></div><div class="scene-glow"></div>
+      <div class="camera-rotation"><div class="world">
+        <div class="continuum-floor"></div><div class="continuum-ceiling"></div>
 
-  <main>
-    <section class="panel hero" id="home" data-theme="dark">
-      <div class="hero-backdrop" aria-hidden="true"></div>
-      <div class="hero-shade" aria-hidden="true"></div>
+        <section class="room room-entrance" style="--room-z: 0px;">
+          <div class="surface floor"></div><div class="surface ceiling"></div><div class="surface wall-left"></div><div class="surface wall-right"></div>
+          <div class="light-strip light-left"></div><div class="light-strip light-right"></div>
+          <div class="entrance-title"><p>PERSONAL / PORTFOLIO</p><h1>VIRTUAL<br /><em>GALLERY</em></h1><span>SCROLL TO ENTER · 2026</span></div>
+          <div class="intro-plinth"><div class="plinth-top"></div><div class="intro-object"><span></span><span></span><span></span></div></div>
+          <div class="entry-portal"><img src="背景.png" alt="" /><div class="portal-shade"></div></div>
+        </section>
 
-      <div class="hero-content reveal">
-        <p class="eyebrow">DESIGN · VISUAL · EXPERIENCE</p>
-        <h1 class="sr-only">Personal Portfolio</h1>
-        <div class="hero-intro">
-          <p>你好，我是 <strong>YOUR NAME</strong></p>
-          <p>一名专注于视觉叙事与数字体验的创作者。</p>
-        </div>
-      </div>
+        <section class="room room-one" style="--room-z: -2200px;">
+          <div class="surface floor"></div><div class="surface ceiling"></div><div class="surface wall-left"></div><div class="surface wall-right"></div>
+          <div class="light-strip light-left"></div><div class="light-strip light-right"></div>
+          <div class="room-sign sign-left"><span>PROJECT 01</span><strong>SYMBIOSIS</strong><small>SPATIAL CONCEPT / 3D VISUAL</small></div>
+          <div class="arch-installation"><div class="arch-shell"></div><div class="arch-core"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="gold-sphere"></div><div class="model-shadow"></div></div>
+          <div class="wall-caption caption-right"><b>共生空间</b><p>以自然形态与几何秩序为线索，探索人与空间之间持续生长的关系。</p><span>01 — 06</span></div>
+        </section>
 
-      <div class="hero-meta reveal">
-        <p>TOKYO / CHINA</p>
-        <p>AVAILABLE FOR<br />SELECTED PROJECTS</p>
-      </div>
+        <div class="threshold threshold-one" style="--threshold-z: -3350px;"><div class="threshold-frame"></div><span>ROOM 01 / 02</span></div>
 
-      <a class="scroll-cue" href="#about" aria-label="向下滚动至关于">
-        <span>向下滑动探索</span>
-        <span class="scroll-line" aria-hidden="true"></span>
-      </a>
-    </section>
-
-    <section class="panel about" id="about" data-theme="light">
-      <div class="section-number" aria-hidden="true">02</div>
-      <div class="about-orb orb-one" aria-hidden="true"></div>
-      <div class="about-orb orb-two" aria-hidden="true"></div>
-
-      <div class="about-grid">
-        <div class="section-heading reveal">
-          <p class="eyebrow dark">ABOUT / 关于我</p>
-          <h2>在理性结构中，<br />寻找<span>感性的光。</span></h2>
-        </div>
-
-        <div class="about-copy reveal">
-          <p class="lead">我关注空间、视觉与人与人之间的连接，用清晰的设计语言，把想法转化为有温度的体验。</p>
-          <p>目前专注于品牌视觉、数字产品与三维空间表达。相信好的设计不只解决问题，也能留下值得被记住的瞬间。</p>
-          <a class="text-link" href="mailto:hello@example.com">LET'S WORK TOGETHER <span>↗</span></a>
-        </div>
-
-        <div class="skills reveal">
-          <div class="skill-item">
-            <span>01</span>
-            <h3>视觉设计</h3>
-            <p>Visual Identity / Editorial / Art Direction</p>
+        <section class="room room-two" style="--room-z: -4550px;">
+          <div class="surface floor"></div><div class="surface ceiling"></div><div class="surface wall-left"></div><div class="surface wall-right"></div>
+          <div class="light-strip light-left"></div><div class="light-strip light-right"></div>
+          <div class="room-sign sign-right dark-text"><span>PROJECT 02</span><strong>BOUNDLESS</strong><small>BRAND IDENTITY / DIGITAL EXPERIENCE</small></div>
+          <div class="screen-cluster">
+            <div class="art-screen screen-one"><i></i><b>BEYOND<br />THE FRAME</b><small>01 / IDENTITY</small></div>
+            <div class="art-screen screen-two"><div class="ui-orbit"></div><b>BOUND<br />LESS</b><small>02 / DIGITAL</small></div>
+            <div class="art-screen screen-three"><i></i><i></i><i></i><small>03 / SYSTEM</small></div>
           </div>
-          <div class="skill-item">
-            <span>02</span>
-            <h3>数字体验</h3>
-            <p>Web Design / UI·UX / Creative Coding</p>
-          </div>
-          <div class="skill-item">
-            <span>03</span>
-            <h3>空间叙事</h3>
-            <p>3D Visual / Exhibition / Spatial Concept</p>
-          </div>
-        </div>
-      </div>
-    </section>
+          <div class="wall-caption caption-left dark-text"><b>无界</b><p>一套可持续变化的视觉系统，让品牌在不同媒介中保持一致并自由延展。</p><span>02 — 06</span></div>
+        </section>
 
-    <section class="panel work" id="work" data-theme="dark">
-      <div class="work-header reveal">
-        <div>
-          <p class="eyebrow">SELECTED WORK / 精选作品</p>
-          <h2>Recent <em>Projects</em></h2>
-        </div>
-        <p class="work-count">2024—2026<br />03 PROJECTS</p>
-      </div>
+        <div class="threshold threshold-two" style="--threshold-z: -5650px;"><div class="threshold-frame"></div><span>ROOM 02 / 03</span></div>
 
-      <div class="project-list">
-        <article class="project-card reveal">
-          <a href="#" aria-label="查看项目一：共生空间" onclick="return false;">
-            <div class="project-visual project-one">
-              <div class="project-shape shape-arch" aria-hidden="true"></div>
-              <div class="project-shape shape-sphere" aria-hidden="true"></div>
-              <span class="project-index">01</span>
-              <span class="view-project">VIEW PROJECT ↗</span>
-            </div>
-            <div class="project-info">
-              <h3>共生空间 <span>SYMBIOSIS</span></h3>
-              <p>Spatial Concept · 3D Visual</p>
-            </div>
-          </a>
-        </article>
+        <section class="room room-three" style="--room-z: -6800px;">
+          <div class="surface floor"></div><div class="surface ceiling"></div><div class="surface wall-left"></div><div class="surface wall-right"></div>
+          <div class="light-strip light-left"></div><div class="light-strip light-right"></div>
+          <div class="room-sign sign-left"><span>PROJECT 03</span><strong>AFTERGLOW</strong><small>ART DIRECTION / EDITORIAL DESIGN</small></div>
+          <div class="light-installation"><div class="light-column column-a"><i></i></div><div class="light-column column-b"><i></i></div><div class="light-column column-c"><i></i></div><div class="light-pool"></div></div>
+          <div class="floating-pages"><div class="page page-a"><span>余温</span><small>AFTERGLOW</small></div><div class="page page-b"><i></i><i></i><i></i></div></div>
+          <div class="wall-caption caption-right"><b>余温</b><p>捕捉光线消失之后仍被保留的感受，将短暂情绪转化为可阅读的视觉节奏。</p><span>03 — 06</span></div>
+        </section>
 
-        <article class="project-card reveal">
-          <a href="#" aria-label="查看项目二：无界" onclick="return false;">
-            <div class="project-visual project-two">
-              <div class="project-shape shape-frame" aria-hidden="true"></div>
-              <div class="project-shape shape-disc" aria-hidden="true"></div>
-              <span class="project-index">02</span>
-              <span class="view-project">VIEW PROJECT ↗</span>
-            </div>
-            <div class="project-info">
-              <h3>无界 <span>BOUNDLESS</span></h3>
-              <p>Brand Identity · Digital Experience</p>
-            </div>
-          </a>
-        </article>
+        <section class="room room-exit" style="--room-z: -8900px;">
+          <div class="surface floor"></div><div class="surface ceiling"></div><div class="surface wall-left"></div><div class="surface wall-right"></div>
+          <div class="exit-light"></div><div class="exit-message"><p>END OF EXHIBITION</p><h2>LET'S CREATE<br /><em>SOMETHING</em> NEW.</h2><span>HELLO@EXAMPLE.COM</span></div>
+        </section>
+      </div></div>
+    </div>
 
-        <article class="project-card reveal">
-          <a href="#" aria-label="查看项目三：余温" onclick="return false;">
-            <div class="project-visual project-three">
-              <div class="project-shape shape-column" aria-hidden="true"></div>
-              <div class="project-shape shape-glow" aria-hidden="true"></div>
-              <span class="project-index">03</span>
-              <span class="view-project">VIEW PROJECT ↗</span>
-            </div>
-            <div class="project-info">
-              <h3>余温 <span>AFTERGLOW</span></h3>
-              <p>Art Direction · Editorial Design</p>
-            </div>
-          </a>
-        </article>
-      </div>
+    <div class="story-layer">
+      <article class="story-card active" data-story="0"><p class="story-kicker">00 / ENTRANCE</p><h2>欢迎进入<br /><em>我的虚拟展馆</em></h2><p class="story-copy">滚动鼠标滚轮，镜头将沿着展馆路径平滑移动。每一个空间，对应一组设计叙事。</p></article>
+      <article class="story-card" data-story="1"><p class="story-kicker">01 / SPATIAL CONCEPT</p><h2>共生空间<br /><em>Symbiosis</em></h2><p class="story-copy">用柔和曲面、自然色彩和轨道结构，构建一件关于生长与连接的空间装置。</p><div class="story-meta"><span>2026</span><span>3D VISUAL</span></div></article>
+      <article class="story-card story-dark" data-story="2"><p class="story-kicker">02 / VISUAL SYSTEM</p><h2>无界<br /><em>Boundless</em></h2><p class="story-copy">跨越屏幕边界的动态视觉语言，在品牌、界面与图像之间建立开放系统。</p><div class="story-meta"><span>2025</span><span>IDENTITY / UI</span></div></article>
+      <article class="story-card" data-story="3"><p class="story-kicker">03 / ART DIRECTION</p><h2>余温<br /><em>Afterglow</em></h2><p class="story-copy">光不是瞬间消失的。项目以暖色光源和漂浮版面，记录情绪残留的过程。</p><div class="story-meta"><span>2024</span><span>EDITORIAL</span></div></article>
+      <article class="story-card story-final" data-story="4"><p class="story-kicker">04 / CONTACT</p><h2>展览结束，<br /><em>新的合作开始。</em></h2><a href="mailto:hello@example.com">HELLO@EXAMPLE.COM ↗</a></article>
+    </div>
 
-      <footer class="site-footer reveal">
-        <p>HAVE A PROJECT IN MIND?</p>
-        <a href="mailto:hello@example.com">HELLO@EXAMPLE.COM ↗</a>
-        <p>© 2026 YOUR NAME</p>
-      </footer>
-    </section>
+    <div class="scroll-guide"><div class="wheel-icon"><i></i></div><span>滚动探索展馆</span></div>
+    <div class="progress-rail" aria-hidden="true"><i></i></div>
+    <div class="frame-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <main class="scroll-track" aria-label="虚拟展馆滚动区域">
+    <section><h2 class="sr-only">展馆入口</h2></section><section><h2 class="sr-only">项目一：共生空间</h2></section><section><h2 class="sr-only">项目二：无界</h2></section><section><h2 class="sr-only">项目三：余温</h2></section><section><h2 class="sr-only">联系</h2></section>
   </main>
-
-  <div class="section-progress" aria-hidden="true"><span></span></div>
+  <noscript>请启用 JavaScript 以体验虚拟展馆。</noscript>
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,25 +1,24 @@
-﻿# Personal Portfolio
+# Virtual Gallery Portfolio
 
-A responsive single-page personal portfolio with three scrolling sections: Home, About, and Work.
+A static immersive portfolio presented as one continuous CSS 3D exhibition space.
 
-## Features
+## Experience
 
-- Full-screen hero using `背景1.png`
-- Interactive cursor/touch spotlight with an on/off toggle
-- Scroll-aware navigation and progress indicator
-- Responsive layouts for desktop, tablet, and mobile
-- Motion-reduction accessibility support
+- Mouse-wheel and touch scrolling drive a smoothed virtual camera path
+- Entrance, three connected project galleries, and a contact space
+- Procedural 3D sculptures, framed visual work, spatial labels, and lighting
+- Fixed HUD navigation, project storytelling, and an information panel
+- Responsive layout with reduced-motion support
+- No external JavaScript or 3D dependencies
 
 ## Preview
-
-Open `index.html` directly, or run a local server:
 
 ```powershell
 python -m http.server 8000
 ```
 
-Then visit `http://localhost:8000`.
+Open `http://localhost:8000` and scroll to move through the gallery.
 
 ## Customize
 
-Update the placeholder name, biography, email address, and project information in `index.html`.
+Edit project content in `index.html`. Camera keyframes and gallery stops are configured in `script.js`.
