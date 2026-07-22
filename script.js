@@ -141,7 +141,13 @@ jumpLinks.forEach((link) => link.addEventListener('click', (event) => {
 }));
 infoToggle.addEventListener('click', () => setPanel(infoToggle.getAttribute('aria-expanded') !== 'true'));
 panelClose.addEventListener('click', () => setPanel(false));
-window.addEventListener('load', () => window.setTimeout(() => body.classList.remove('is-loading'), 450));
+const hideLoader = () => body.classList.remove('is-loading');
+if (document.readyState === 'complete') {
+  window.setTimeout(hideLoader, 450);
+} else {
+  window.addEventListener('load', () => window.setTimeout(hideLoader, 450), { once: true });
+}
+window.setTimeout(hideLoader, 1800);
 
 updateTargetProgress();
 updateStop(0);
